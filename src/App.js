@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// import pages
+import Home from "./pages/Home";
+import Comics from "./pages/Comics";
+import CharacterID from "./pages/CharacterID";
+
+// import components
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/comics" element={<Comics />} />
+        <Route path="/character/_id" element={<CharacterID />} />
+        {/* Créer la route character avec le params id (/:id) */}
+      </Routes>
+    </Router>
   );
 }
 

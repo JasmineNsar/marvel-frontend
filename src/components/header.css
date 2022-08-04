@@ -1,0 +1,9 @@
+.header-container {
+  border: black solid 1px;
+  /* display: flex;
+  justify-content: center; */
+}
+.buttons {
+  display: block;
+  border: solid blue 1px;
+}
