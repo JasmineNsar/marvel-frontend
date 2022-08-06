@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="header-container">
+    <section className="header-container">
       <Link to={"/"}>
         <img src={logo} alt="logo" />
       </Link>
@@ -20,7 +20,7 @@ const Header = () => {
 
         <button>Favoris</button>
       </div>
-    </div>
+    </section>
   );
 };
 export default Header;

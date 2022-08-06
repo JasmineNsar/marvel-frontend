@@ -1,7 +1,16 @@
-/* .character {
+/* .charactersSection {
+  /* display: flex;
+  flex-wrap: wrap;
 } */
 
-.character-picture {
+.charactersDiv {
+  border: red solid 1px;
+  margin-bottom: 50px;
+  /* height: 156px; */
+  width: 355px;
+}
+
+img {
   width: 192px;
   height: 206px;
 }

@@ -26,18 +26,13 @@ const Home = () => {
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
-    <div>
+    <section className="charactersSection">
       {data.results.map((character, index) => {
         return (
-          <div>
+          <div className="charactersDiv">
             <Link to={`/character/${character._id}`}>
-              {/* Comme dans Vinted, mettre un Link qui permet de récup l'id */}
-              {/* recupérer l'id sur la page characterID */}
-              {/* sur cette page (characterID), envoyer la requete vers la route du back */}
-
               {/* ⬇︎ path et extension séparé dans l'api */}
               <img
-                className="character-picture"
                 src={
                   character.thumbnail.path + "." + character.thumbnail.extension
                 }
@@ -49,7 +44,7 @@ const Home = () => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 

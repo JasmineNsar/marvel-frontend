@@ -16,8 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/comics" element={<Comics />} />
-        <Route path="/character/_id" element={<CharacterID />} />
-        {/* Créer la route character avec le params id (/:id) */}
+        <Route path="/character/:id" element={<CharacterID />} />
       </Routes>
     </Router>
   );

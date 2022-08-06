@@ -1,9 +1,20 @@
 .header-container {
-  border: black solid 1px;
-  /* display: flex;
-  justify-content: center; */
+  background-color: #202020;
+  height: 90px;
+  text-align: center;
+  padding: 15px;
 }
+
+.header-container img {
+  width: 130px;
+  height: 52px;
+  /* 334 151 */
+}
+
 .buttons {
-  display: block;
-  border: solid blue 1px;
+  margin-top: 10px;
+  /* border: solid blue 1px; */
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
 }
