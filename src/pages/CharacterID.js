@@ -28,7 +28,7 @@ const CharacterID = () => {
     <p>En cours de chargement</p>
   ) : (
     <section>
-      {/* ⬇︎ div du map de mon perso avec photo + nom + description; dans l'api la photo est au tout début et les infos sont à la toute fin */}
+      {/* ⬇︎ div de mon perso avec photo + nom + description; dans l'api la photo est au tout début et les infos sont à la toute fin */}
       <div className="characterInfo">
         <img
           src={data.thumbnail.path + "." + data.thumbnail.extension}
@@ -44,7 +44,7 @@ const CharacterID = () => {
       <div className="characterComicsInfo">
         {data.comics.map((characterComic, index) => {
           return (
-            <div>
+            <div key={index}>
               <img
                 src={
                   characterComic.thumbnail.path +

@@ -1,10 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+
+// components import
+import SearchBar from "../components/SearchBar";
 
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  // ⬇︎ stock le contenu de l'input du component search
+  const [search, setSearch] = useState();
 
   useEffect(() => {
     try {
@@ -23,12 +27,15 @@ const Comics = () => {
   }, []);
 
   return isLoading === true ? (
-    <div>En cours de chargement</div>
+    <div>Loading ... </div>
   ) : (
-    <div>
+    <section>
+      {/* ⬇︎ components SearchBar avec ses props*/}
+      <SearchBar search={search} setSearch={setSearch} name="comics" />
+
       {data.results.map((comic, index) => {
         return (
-          <div>
+          <div key={index}>
             {/* ⬇︎ path et extension séparé dans l'api */}
             <img
               src={comic.thumbnail.path + "." + comic.thumbnail.extension}
@@ -39,7 +46,7 @@ const Comics = () => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 export default Comics;

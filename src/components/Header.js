@@ -11,14 +11,14 @@ const Header = () => {
 
       <div className="buttons">
         <Link to={"/"}>
-          <button>Personnages</button>
+          <button>CHARACTERS</button>
         </Link>
 
         <Link to={"/comics"}>
-          <button>Comics</button>
+          <button>COMICS</button>
         </Link>
 
-        <button>Favoris</button>
+        <button>FAVORITES</button>
       </div>
     </section>
   );
