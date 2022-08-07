@@ -1,3 +1,4 @@
+import "./comics.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -29,23 +30,29 @@ const Comics = () => {
   return isLoading === true ? (
     <div>Loading ... </div>
   ) : (
-    <section>
+    <section className="comicsSection">
       {/* ⬇︎ components SearchBar avec ses props*/}
-      <SearchBar search={search} setSearch={setSearch} name="comics" />
+      <div className="searchBar">
+        <SearchBar search={search} setSearch={setSearch} name="comics" />
+      </div>
 
-      {data.results.map((comic, index) => {
-        return (
-          <div key={index}>
-            {/* ⬇︎ path et extension séparé dans l'api */}
-            <img
-              src={comic.thumbnail.path + "." + comic.thumbnail.extension}
-              alt="comicPicture"
-            />
-            <h2>{comic.title}</h2>
-            <p>{comic.description}</p>
-          </div>
-        );
-      })}
+      <div className="comicsContainer">
+        {data.results.map((comic, index) => {
+          return (
+            <div className="comicDiv" key={index}>
+              {/* ⬇︎ path et extension séparé dans l'api */}
+              <img
+                src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                alt="comicPicture"
+              />
+              <div className="comicInfo">
+                <h1>{comic.title}</h1>
+                <p>{comic.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };

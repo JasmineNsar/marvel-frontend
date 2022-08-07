@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <section className="header-container">
-      <Link to={"/"}>
-        <img src={logo} alt="logo" />
-      </Link>
+      <div className="img">
+        <Link to={"/"}>
+          <img src={logo} alt="logo" />
+        </Link>
+      </div>
 
       <div className="buttons">
         <Link to={"/"}>
@@ -17,8 +19,9 @@ const Header = () => {
         <Link to={"/comics"}>
           <button>COMICS</button>
         </Link>
-
-        <button>FAVORITES</button>
+        <Link to={""}>
+          <button>FAVORITES</button>
+        </Link>
       </div>
     </section>
   );

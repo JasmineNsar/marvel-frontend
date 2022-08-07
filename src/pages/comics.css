@@ -1,0 +1,49 @@
+.comicsContainer {
+  /* border: solid red 1px; */
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.searchBar input {
+  margin: 30px 245px;
+  height: 25px;
+  width: 200px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.comicDiv {
+  /* border: red solid 1px; */
+  border-bottom-right-radius: 20px;
+  margin-bottom: 50px;
+  width: 550px;
+  /* height: 340px; */
+  height: 100%;
+  margin-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+}
+
+.comicDiv img {
+  width: 350px;
+  height: 350px;
+  /* border-bottom: solid red 5px; */
+}
+
+.comicInfo {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: lighter;
+  line-height: 25px;
+}

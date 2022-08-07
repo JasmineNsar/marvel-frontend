@@ -1,20 +1,28 @@
 .header-container {
   background-color: #202020;
-  height: 90px;
+  height: 100px;
   text-align: center;
   padding: 15px;
 }
 
-.header-container img {
-  width: 130px;
-  height: 52px;
-  /* 334 151 */
+.img {
+  border-bottom: grey solid 1px;
 }
-
+img {
+  width: 130px;
+  height: 55px;
+}
 .buttons {
-  margin-top: 10px;
-  /* border: solid blue 1px; */
-  color: white;
   display: flex;
   justify-content: space-evenly;
+}
+
+button {
+  margin-top: 10px;
+  /* border: solid blue 1px; */
+  height: 30px;
+  width: 150px;
+  background-color: #272626;
+  color: white;
+  border-radius: 10px;
 }

@@ -31,14 +31,16 @@ const Home = () => {
   return isLoading === true ? (
     <div>Loading ...</div>
   ) : (
-    <section className="charactersSection">
+    <section className="section">
       {/* ⬇︎ components SearchBar avec ses props*/}
-      <SearchBar search={search} setSearch={setSearch} name="characters" />
+      <div className="searchBar">
+        <SearchBar search={search} setSearch={setSearch} name="characters" />
+      </div>
 
-      <div>
+      <div className="charactersContainer">
         {data.results.map((character, index) => {
           return (
-            <div className="charactersDiv" key={index}>
+            <div className="charDiv" key={index}>
               <Link to={`/character/${character._id}`}>
                 {/* ⬇︎ path et extension séparé dans l'api */}
                 <img
@@ -50,8 +52,10 @@ const Home = () => {
                   alt="characterPicture"
                 />
               </Link>
-              <h2>{character.name}</h2>
-              <p>{character.description}</p>
+              <div className="charInfo">
+                <h1>{character.name}</h1>
+                {/* <p>{character.description}</p> */}
+              </div>
             </div>
           );
         })}

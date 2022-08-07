@@ -1,3 +1,5 @@
+import "./characterID.css";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -27,24 +29,27 @@ const CharacterID = () => {
   return isLoading === true ? (
     <p>En cours de chargement</p>
   ) : (
-    <section>
+    <section className="sectionCharID">
       {/* ⬇︎ div de mon perso avec photo + nom + description; dans l'api la photo est au tout début et les infos sont à la toute fin */}
-      <div className="characterInfo">
-        <img
-          src={data.thumbnail.path + "." + data.thumbnail.extension}
-          alt="character"
-        />
+      <div className="charIdDiv">
         <div>
-          {data.name}
-          {data.description}
+          <img
+            src={data.thumbnail.path + "." + data.thumbnail.extension}
+            alt="character"
+          />
+        </div>
+
+        <div className="charNameDes">
+          <h1>{data.name}</h1>
+          <p>{data.description}</p>
         </div>
       </div>
 
       {/* ⬇︎ div du map des comics lié au perso avec photo + title + description; dans l'api le tableau comics commence à la ligne 9 */}
-      <div className="characterComicsInfo">
+      <div className="charComicsDiv">
         {data.comics.map((characterComic, index) => {
           return (
-            <div key={index}>
+            <div className="comicImg" key={index}>
               <img
                 src={
                   characterComic.thumbnail.path +
@@ -53,9 +58,10 @@ const CharacterID = () => {
                 }
                 alt="comic"
               />
-
-              {characterComic.title}
-              {characterComic.description}
+              <div className="charComicsInfo">
+                <h1>{characterComic.title}</h1>
+                <p>{characterComic.description}</p>
+              </div>
             </div>
           );
         })}
