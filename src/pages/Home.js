@@ -10,7 +10,7 @@ const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // ⬇︎ stock le contenu de l'input du component search
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     try {

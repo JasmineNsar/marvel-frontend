@@ -8,13 +8,13 @@ const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // ⬇︎ stock le contenu de l'input du component search
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     try {
       const fetchComics = async () => {
         const response = await axios.get(
-          "https://jasmine-marvel-backend.herokuapp.com/comics"
+          `https://jasmine-marvel-backend.herokuapp.com/comics?title=${search}`
         );
         // console.log(response.data);
         setData(response.data);
@@ -24,7 +24,7 @@ const Comics = () => {
     } catch (error) {
       console.log(error.message);
     }
-  }, []);
+  }, [search]);
 
   return isLoading === true ? (
     <div>Loading ... </div>
