@@ -6,11 +6,16 @@ import { Link } from "react-router-dom";
 // components import
 import SearchBar from "../components/SearchBar";
 
+// pagination
+
 const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // ⬇︎ stock le contenu de l'input du component search
   const [search, setSearch] = useState("");
+
+  // pagination
+  const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   useEffect(() => {
     try {
@@ -54,10 +59,15 @@ const Home = () => {
               </Link>
               <div className="charInfo">
                 <h1>{character.name}</h1>
-                {/* <p>{character.description}</p> */}
               </div>
             </div>
           );
+        })}
+      </div>
+      {/* pagination */}
+      <div>
+        {pages.map((page, index) => {
+          return <button>{page}</button>;
         })}
       </div>
     </section>
